@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="player">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element type="xs:string" name="Name"/>
+        <xs:element type="xs:string" name="Surname"/>
+        <xs:element type="xs:byte" name="Age"/>
+        <xs:element name="Accolades">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element type="xs:byte" name="NBA-Champ"/>
+              <xs:element type="xs:byte" name="NBA-All-Star"/>
+              <xs:element type="xs:byte" name="First-team"/>
+              <xs:element type="xs:byte" name="Seccond-team"/>
+              <xs:element type="xs:byte" name="NBA-Finals-MVP"/>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Teams">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Team" maxOccurs="unbounded" minOccurs="0">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element type="xs:string" name="Title"/>
+                    <xs:element type="xs:string" name="Seazon"/>
+                    <xs:element name="Stats">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element type="xs:float" name="Points"/>
+                          <xs:element type="xs:float" name="Rebounds"/>
+                          <xs:element type="xs:float" name="Assists"/>
+                          <xs:element type="xs:float" name="Steals"/>
+                          <xs:element type="xs:float" name="Blocks"/>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Current-form">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element type="xs:float" name="PointS"/>
+              <xs:element type="xs:float" name="AssistS"/>
+              <xs:element type="xs:float" name="ReboundS"/>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Injuries">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="COVID-protocol">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element type="xs:string" name="Current-Protocol"/>
+                    <xs:element type="xs:string" name="Current-protocol-validation"/>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
